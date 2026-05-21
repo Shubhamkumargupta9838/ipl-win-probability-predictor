@@ -1,105 +1,143 @@
-# IPL Win Predictor
+# IPL Win Probability Predictor
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20Predictor-brightgreen)](https://ipl-match-predictor.streamlit.app/)
-[![GitHub Repository](https://img.shields.io/badge/GitHub%20Repo-IPL%20Win%20Predictor-green)](https://github.com/rajatrawal/ipl-win-predictor)
-[![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+A Machine Learning based IPL match win probability prediction system developed using Python, Scikit-learn, Pandas, and Streamlit.
 
-[![Python](https://img.shields.io/badge/Python-3.9-blue)](https://www.python.org/)
-[![Logistic Regression](https://img.shields.io/badge/Logistic%20Regression-Model-blue)](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
-[![NumPy](https://img.shields.io/badge/NumPy-1.19-blue)](https://numpy.org/)
-[![pandas](https://img.shields.io/badge/pandas-1.2-blue)](https://pandas.pydata.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-0.80-blue)](https://www.streamlit.io/)
+## Developed By
+Shubham Kumar Gupta
 
-Welcome to the "IPL Win Predictor" project! This machine learning model, built using logistic regression, predicts the probability of a team winning an IPL match based on the current match situation. Get ready to make data-driven predictions!
+## Project Overview
+This project predicts the winning probability of IPL teams during live chase situations based on match conditions such as:
 
-## About This Project
+- Batting Team
+- Bowling Team
+- Venue
+- Target Score
+- Current Score
+- Overs Completed
+- Wickets Down
 
-The "IPL Win Predictor" leverages logistic regression to provide insights into the probability of a team winning an IPL match. This model analyzes various match features, team performance, and player statistics to offer real-time predictions.
+The prediction model is trained using historical IPL ball-by-ball datasets from 2008–2024.
 
-## Project Preview
-![Capture](https://github.com/rajatrawal/ipl-win-predictor/assets/72153827/071a020f-0bf5-4872-904f-5f9a0e928fd1)
+---
 
+## Features
+- Real-time IPL win probability prediction
+- Interactive Streamlit web interface
+- Machine Learning based prediction
+- Feature engineering using cricket match statistics
+- Input validation for cricket overs
+- Responsive modern UI
 
-## Explore the Project
+---
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20Predictor-brightgreen)](https://ipl-match-predictor.streamlit.app/)
+## Tech Stack
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Streamlit
+- Logistic Regression
+- OneHotEncoder
+- Machine Learning Pipeline
 
-### Features
+---
 
-- **Real-Time Predictions**: Get live predictions for IPL match outcomes based on the current match situation.
+## Machine Learning Workflow
+```text
+Historical IPL Data
+        ↓
+Data Cleaning
+        ↓
+Feature Engineering
+        ↓
+One Hot Encoding
+        ↓
+Logistic Regression Model
+        ↓
+Probability Prediction
+```
 
-- **Interactive Interface**: The predictor is deployed on Streamlit, offering a user-friendly interface for exploring match scenarios.
+---
 
-- **Customizable Inputs**: Adjust the match parameters and teams to simulate different match scenarios.
+## Important Features Used
+The model predicts probability using:
+- Runs Left
+- Balls Left
+- Wickets Remaining
+- Current Run Rate (CRR)
+- Required Run Rate (RRR)
+- Batting Team
+- Bowling Team
+- Venue
 
-- **Deployment**: Hosted on Streamlit Cloud for easy access and sharing.
+---
 
-## Usage
+## Project Structure
+```text
+IPL-WIN-PROBABILITY-PREDICTOR
+│
+├── app.py
+├── retrain_model.py
+├── pipe.pkl
+├── requirements.txt
+├── README.md
+├── matches_2008-2024.csv
+├── deliveries_2008-2024.csv
+└── ipl.ipynb
+```
 
-To make predictions, provide the following parameters when prompted:
+---
 
-- **Batting Team**: The team currently at bat.
-- **Bowling Team**: The team currently bowling.
-- **City**: The location of the match.
-- **Current runs**: The current score of batting team.
-- **Overs Completed**: The number of overs completed.
-- **Wickets**: The number of wickets lost.
-- **Target Runs**: The total runs scored by a bowling team.
+## How to Run the Project
 
-The predictor will calculate the probability of the batting team winning based on these parameters and the current match situation.
+### 1. Clone Repository
+```bash
+git clone https://github.com/Shubhamkumargupta9838/ipl-win-probability-predictor.git
+```
 
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-## Technologies Used
+### 3. Run Application
+```bash
+streamlit run app.py
+```
 
-This project leverages the following technologies:
+---
 
-- [Python](https://www.python.org/)
-- [Logistic Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
-- [NumPy](https://numpy.org/)
-- [pandas](https://pandas.pydata.org/)
-- [Streamlit](https://www.streamlit.io/)
+## Model Details
+The project uses:
+- Scikit-learn Pipeline
+- ColumnTransformer
+- OneHotEncoder
+- Logistic Regression Classifier
 
-## Installation
+---
 
-To run this project locally, follow these steps:
+## Improvements Added
+- Enhanced UI/UX
+- IPL branding and responsive layout
+- Robust input validation
+- Updated IPL datasets (2008–2024)
+- Modular training pipeline
+- Better feature engineering
 
-1. Clone the repository to your local machine using this command:
+---
 
-   ```shell
-   git clone https://github.com/rajatrawal/ipl-win-predictor.git
-   ```
+## Future Scope
+- Live API integration
+- Deep Learning models
+- Cloud deployment
+- Mobile application support
+- Player-level analytics
 
-2. Navigate to the project directory:
+---
 
-   ```shell
-   cd ipl-win-predictor
-   ```
+## Screenshots
 
-3. Install the required Python libraries:
+![alt text](image.png)
 
-   ```shell
-   pip install -r requirements.txt
-   ```
-
-4. Run the Streamlit app locally:
-
-   ```shell
-   streamlit run app.py
-   ```
-
-5. Open the provided local URL in your web browser to access the IPL Win Predictor.
-
-## Usage
-
-To make predictions, provide the current match situation including team performance, player statistics, and match conditions. The predictor will calculate the probability of a team winning.
-
-
-## Predict with Confidence
-
-Explore the "IPL Win Predictor" and make data-driven predictions about IPL match outcomes. Get real-time insights and enhance your understanding of match dynamics. Visit the [Live Demo](https://ipl-match-predictor.streamlit.app/) and elevate your cricket analysis.
-
-## Contribute
-
-If you'd like to contribute to this project or have suggestions for improvement, please feel free to submit issues or pull requests on [GitHub](https://github.com/rajatrawal/ipl-win-predictor).
-
-Thank you for exploring the "IPL Win Predictor"! We hope this tool assists your IPL match predictions. 🏏🌟
+## License
+This project is for educational and learning purposes.
